@@ -3,6 +3,7 @@ const INLINE_RULES: Array<[RegExp, string]> = [
   [/\[i\](.*?)\[\/i\]/gis, "<em>$1</em>"],
   [/\[u\](.*?)\[\/u\]/gis, "<u>$1</u>"],
   [/\[s\](.*?)\[\/s\]/gis, "<s>$1</s>"],
+  [/\[quote=([^\]]+)\](.*?)\[\/quote\]/gis, '<blockquote><cite>$1 wrote:</cite>$2</blockquote>'],
   [/\[quote\](.*?)\[\/quote\]/gis, "<blockquote>$1</blockquote>"],
   [/\[url\](https?:\/\/[^\[]+)\[\/url\]/gis, '<a href="$1" target="_blank" rel="noreferrer">$1</a>'],
   [/\[url=(https?:\/\/[^\]]+)\](.*?)\[\/url\]/gis, '<a href="$1" target="_blank" rel="noreferrer">$2</a>'],

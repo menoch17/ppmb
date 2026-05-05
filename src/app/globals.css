@@ -327,10 +327,21 @@ h1 {
 
 .postBody blockquote {
   margin: 1rem 0;
-  padding: 0.9rem 1rem;
+  padding: 0 1rem 0.9rem;
   border-left: 3px solid rgba(157, 67, 37, 0.45);
   border-radius: 0 0.9rem 0.9rem 0;
   background: rgba(157, 67, 37, 0.06);
+}
+
+.postBody blockquote cite {
+  display: block;
+  padding: 0.45rem 0 0.55rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(157, 67, 37, 0.85);
+  border-bottom: 1px solid rgba(157, 67, 37, 0.2);
+  margin-bottom: 0.65rem;
 }
 
 .postBody img {
