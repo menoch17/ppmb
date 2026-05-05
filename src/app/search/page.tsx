@@ -19,13 +19,13 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const result = query ? await searchThreads(query, page) : { results: [], totalCount: 0 };
 
   return (
-    <ArchiveShell title="Search the Archive" subtitle="Look through archived thread titles and preserved post text across the old board.">
+    <ArchiveShell title="Search the Archive" subtitle="Look through archived thread titles and usernames across the old board.">
       <section className="panel">
         <h2 className="sectionTitle">{query ? `Results for “${query}”` : "Start a Search"}</h2>
         <p className="sectionCopy">
           {query
             ? `${pluralize(result.totalCount, "match")} found across the archive.`
-            : "Use the search box above to find old threads, usernames, or phrases from archived posts."}
+            : "Use the search box above to find old thread titles or usernames."}
         </p>
         {query ? (
           result.results.length > 0 ? (

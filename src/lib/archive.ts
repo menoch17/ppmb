@@ -128,23 +128,6 @@ export async function searchThreads(query: string, page: number) {
     return { results: [] as SearchResult[], totalCount: 0 };
   }
 
-  const textSearch = await supabase
-    .from("thread_search")
-    .select("nodeid, channel_id, title, authorname, publishdate, lastcontent, channel_title", { count: "exact" })
-    .textSearch("document", normalized, {
-      type: "websearch",
-      config: "english"
-    })
-    .order("lastcontent", { ascending: false, nullsFirst: false })
-    .range(start, end);
-
-  if (!textSearch.error) {
-    return {
-      results: textSearch.data ?? [],
-      totalCount: textSearch.count ?? 0
-    };
-  }
-
   const fallback = await supabase
     .from("threads")
     .select("nodeid, channel_id, title, authorname, publishdate, lastcontent, channel:channels(title)", { count: "exact" })

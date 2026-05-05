@@ -61,5 +61,5 @@ The app includes:
 - forum index
 - forum thread pages
 - paginated thread pages
-- archive search
+- lightweight archive search by thread title and username
 - read-only rendering for BBCode-style post bodies

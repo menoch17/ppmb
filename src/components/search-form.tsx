@@ -19,7 +19,7 @@ export function SearchForm() {
       <input
         aria-label="Search archived threads"
         className="searchInput"
-        placeholder="Search threads and post text"
+        placeholder="Search thread titles or usernames"
         type="search"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
