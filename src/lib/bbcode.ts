@@ -22,7 +22,8 @@ function escapeHtml(text: string) {
 }
 
 export function bbcodeToHtml(text: string | null) {
-  let html = escapeHtml(text ?? "");
+  // rawtext from vBulletin is already HTML-encoded, so skip escapeHtml
+  let html = text ?? "";
   for (const [pattern, replacement] of INLINE_RULES) {
     html = html.replace(pattern, replacement);
   }
